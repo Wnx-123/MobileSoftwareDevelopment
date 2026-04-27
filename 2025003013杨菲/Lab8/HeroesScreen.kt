@@ -36,22 +36,19 @@ fun HeroItem(
     hero: Hero,
     modifier: Modifier = Modifier
 ) {
-    // 卡片改大，高度增加、框更大
     Card(
         modifier = modifier
             .fillMaxWidth()
             .padding(vertical = 4.dp),
         shape = MaterialTheme.shapes.medium
     ) {
-        // Row 顺序：文字在左，头像在右
         Row(
             modifier = Modifier
-                .padding(20.dp)  // 内边距加大 = 框更大
+                .padding(20.dp)
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            // 左边：名字 + 描述
             Column(
                 modifier = Modifier.weight(0.7f)
             ) {
@@ -67,12 +64,11 @@ fun HeroItem(
 
             Spacer(modifier = Modifier.width(16.dp))
 
-            // 右边：英雄头像
             Image(
                 painter = painterResource(hero.imageRes),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(80.dp)  // 头像也放大一点
+                    .size(80.dp)
                     .clip(RoundedCornerShape(8.dp)),
                 contentScale = ContentScale.Crop
             )
